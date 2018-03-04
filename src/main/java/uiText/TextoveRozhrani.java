@@ -88,6 +88,7 @@ public class TextoveRozhrani {
 
     /**
      * Metoda přečte příkaz z příkazového řádku
+     * Vyřešit scanner is never closed
      *
      * @return    vrací přečtený příkaz jako instanci třídy String
      */
