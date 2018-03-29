@@ -1,6 +1,6 @@
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
-package uiText;
+package ui;
 
 import java.io.*;
 import java.util.Scanner;
