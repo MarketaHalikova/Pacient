@@ -40,7 +40,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.github.marketahalikova.pacient.main.Start</mainClass>
+							<mainClass>com.github.marketahalikova.pacient.ui.Application</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
