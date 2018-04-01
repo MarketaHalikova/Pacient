@@ -2,6 +2,8 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package logika;
 
+import java.util.Observable;
+
 /**
  * Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -12,7 +14,7 @@ package logika;
  * @author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Jan Riha, Markéta Halíková
  * @version    LS 2016/2017
  */
-public class HerniPlan {
+public class HerniPlan extends Observable{
 
     private static final String NAZEV_VITEZNE_LOKACE = "hlava";
     
@@ -35,13 +37,13 @@ public class HerniPlan {
      */
     private void zalozLokaceHry() {
         // vytvářejí se jednotlivé lokace
-        Lokace pusa = new Lokace("pusa","pusa pacienta");
-        Lokace krk = new Lokace("krk","krk pacienta");
-        Lokace telo = new Lokace("telo","tělo pacienta");
-        Lokace pravaRuka = new Lokace("ruka-prava","pravá ruka pacienta");
-        Lokace levaRuka = new Lokace("ruka-leva","levá ruka pacienta");
-        Lokace pravaNoha = new Lokace("noha-prava","pravá noha pacienta");
-        Lokace levaNoha = new Lokace("noha-leva","levá noha pacienta");
+        Lokace pusa = new Lokace("pusa","pusa pacienta",140.0,70.0);
+        Lokace krk = new Lokace("krk","krk pacienta",140.0,85.0);
+        Lokace telo = new Lokace("telo","tělo pacienta",140.0,120.0);
+        Lokace pravaRuka = new Lokace("ruka-prava","pravá ruka pacienta",200.0,153.0);
+        Lokace levaRuka = new Lokace("ruka-leva","levá ruka pacienta",80.0,153.0);
+        Lokace pravaNoha = new Lokace("noha-prava","pravá noha pacienta",156.0,238.0);
+        Lokace levaNoha = new Lokace("noha-leva","levá noha pacienta",123.0,238.0);
         
         // přiřazují se průchody mezi lokacemi (sousedící lokace)
         pusa.setVychod(krk);
@@ -85,11 +87,10 @@ public class HerniPlan {
         
         levaNoha.vlozNepritele(parazit);
         
-        Lokace hlava = new Lokace(NAZEV_VITEZNE_LOKACE, "hlava pacienta", true, paralen1, paralen2);
+        Lokace hlava = new Lokace(NAZEV_VITEZNE_LOKACE, "hlava pacienta",140.0,50.0, true, paralen1, paralen2);
         krk.setVychod(hlava);
         hlava.setVychod(krk);
         hlava.vlozPredmet(mozek);
-        
         aktualniLokace = pusa;  // hra začíná v puse      
     }
 
@@ -110,6 +111,8 @@ public class HerniPlan {
      */
     public void setAktualniLokace(Lokace lokace) {
        aktualniLokace = lokace;
+       setChanged();
+       notifyObservers();
     }
     
     /**

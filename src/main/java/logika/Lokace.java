@@ -32,6 +32,9 @@ public class Lokace {
     private Predmet klic1;
     private Predmet klic2;
     private Nepritel nepritel;
+    
+    private double x;
+    private double y;
 
     /**
      * VytvoĹ™enĂ­ lokace se zadanĂ˝m popisem, napĹ™. "kuchyĹ�", "hala", 
@@ -39,11 +42,13 @@ public class Lokace {
      * @param    nazev nazev lokace, jednoznaÄŤnĂ˝ identifikĂˇtor, jedno slovo nebo vĂ­ceslovnĂ˝ nĂˇzev bez mezer
      * @param    popis Popis lokace
      */
-    public Lokace(String nazev, String popis) {
+    public Lokace(String nazev, String popis, double x, double y) {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
         predmety = new HashMap<>();
+        this.x = x;
+        this.y = y;
     }
     /**
      * VytvoĹ™enĂ­ lokace se zadanĂ˝m popisem, napĹ™. "kuchyĹ�", "hala", moĹľnostĂ­ zamknout mĂ­stnost a klĂ­ÄŤi k odemknutĂ­
@@ -54,8 +59,8 @@ public class Lokace {
      * @param    klic1 Predmet potĹ™ebnĂ˝ k odemÄŤenĂ­ mĂ­stnosti
      * @param    klic2 Predmet potĹ™ebnĂ˝ k odemÄŤenĂ­ mĂ­stnosti
      */
-    public Lokace(String nazev, String popis, boolean zamceno, Predmet klic1, Predmet klic2) {
-        this(nazev, popis);
+    public Lokace(String nazev, String popis, double x, double y, boolean zamceno, Predmet klic1, Predmet klic2) {
+        this(nazev, popis, x, y);
         this.zamceno = zamceno;
         this.klic1 = klic1;
         this.klic2 = klic2;
@@ -325,5 +330,22 @@ public class Lokace {
     public Nepritel getNepritele(){
         return nepritel;
     }
+    
+    public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
     
 }
