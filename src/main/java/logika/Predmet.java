@@ -2,6 +2,8 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package logika;
 
+import java.util.Observable;
+
 /**
  * Třída Predmet představuje jednotlivé předměty (věci), které je možné
  * ve hře najít.
@@ -13,7 +15,7 @@ package logika;
  * @author     Jan Riha, Markéta Halíková
  * @version    LS 2016/2017
  */
-public class Predmet{
+public class Predmet extends Observable {
     private String nazev;
     private String popis;
     private boolean prenositelny;

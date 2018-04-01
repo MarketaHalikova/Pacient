@@ -63,7 +63,7 @@
       <VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
             <Label text="Věci v prostoru" />
-            <ListView prefHeight="147.0" prefWidth="231.0">
+            <ListView fx:id="veci" prefHeight="147.0" prefWidth="231.0">
                <contextMenu>
                   <ContextMenu>
                     <items>

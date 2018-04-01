@@ -167,6 +167,13 @@ public class Lokace {
         
         return seznam;
     }
+    
+    public Collection<Predmet> getPredmety() {
+
+    	return predmety.values();
+    }
+    
+    
 
     /**
      * VracĂ­ textovĂ˝ Ĺ™etÄ›zec, kterĂ˝ popisuje sousednĂ­ vĂ˝chody, napĹ™Ă­klad:
