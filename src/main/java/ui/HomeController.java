@@ -31,6 +31,7 @@ public class HomeController extends GridPane implements Observer{
 	@FXML private ImageView uzivatel;
 	@FXML private ListView<String> vychody;
 	@FXML private ListView<Predmet> veci;
+	@FXML private ListView<Predmet> lekarnicka;
 
 	private IHra hra;
 	
@@ -77,6 +78,9 @@ public class HomeController extends GridPane implements Observer{
 		ObservableList<Predmet> predmety = FXCollections.observableArrayList();
 		predmety.addAll(hra.getHerniPlan().getAktualniLokace().getPredmety());
 		veci.setItems(predmety);
+		ObservableList<Predmet> vLekarnicce = FXCollections.observableArrayList();
+		vLekarnicce.addAll(hra.getHerniPlan().getLekarnicka().obsahLekarnicky());
+		lekarnicka.setItems(vLekarnicce);
 		veci.setCellFactory(param -> new ListCell<Predmet>() {	
 			 private ImageView imageView = new ImageView();
 	            @Override
@@ -86,31 +90,53 @@ public class HomeController extends GridPane implements Observer{
 	                    setText(null);
 	                    setGraphic(null);
 	                } else {
-	                    if(predmet.getNazev().equals("jazyk"))
-	                        imageView.setImage(new Image("/jazyk.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("penicilin"))
-	                        imageView.setImage(new Image("/penicilin.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("prasek-zeleny"))
-	                        imageView.setImage(new Image("/prasekZeleny.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("prasek-modry"))
-	                        imageView.setImage(new Image("/prasekModry.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("srdce"))
-	                        imageView.setImage(new Image("/srdce.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("mozek"))
-	                        imageView.setImage(new Image("/mozek.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("oxacilin"))
-	                        imageView.setImage(new Image("/oxacilin.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("paralen1"))
-	                        imageView.setImage(new Image("/paralen1.png", 30, 30, false, false));
-	                    else if(predmet.getNazev().equals("paralen2"))
-	                        imageView.setImage(new Image("/paralen2.png", 30, 30, false, false));
+	                	imageView.setImage(getImage(predmet));
 	                    //setText(predmet.getNazev());
 	                    setGraphic(imageView);
 	                }
-	            }
+	            }	
+	    });
+		lekarnicka.setCellFactory(param -> new ListCell<Predmet>() {	
+			 private ImageView imageView = new ImageView();
+	            @Override
+	            public void updateItem(Predmet predmet, boolean empty) {
+	                super.updateItem(predmet, empty);
+	                if (empty) {
+	                    setText(null);
+	                    setGraphic(null);
+	                } else {
+	                	imageView.setImage(getImage(predmet));
+	                    //setText(predmet.getNazev());
+	                    setGraphic(imageView);
+	                }
+	            }	
 	    });
 		
+		
 
+	}
+	
+	private Image getImage(Predmet predmet) {
+		Image image = null;
+		if(predmet.getNazev().equals("jazyk"))
+            image = new Image("/jazyk.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("penicilin"))
+        	image = new Image("/penicilin.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("prasek-zeleny"))
+        	image = new Image("/prasekZeleny.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("prasek-modry"))
+        	image = new Image("/prasekModry.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("srdce"))
+        	image = new Image("/srdce.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("mozek"))
+        	image = new Image("/mozek.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("oxacilin"))
+        	image = new Image("/oxacilin.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("paralen1"))
+        	image = new Image("/paralen1.png", 40, 40, false, false);
+        else if(predmet.getNazev().equals("paralen2"))
+        	image = new Image("/paralen2.png", 40, 40, false, false);
+		return image;
 	}
 
 }
