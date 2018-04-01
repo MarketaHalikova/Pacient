@@ -64,7 +64,7 @@ public class PrikazVezmi implements IPrikaz{
             aktLokace.vlozPredmet(predmet);
             return "V lekarnicce uz nemas volne misto, muzes nest jen dve veci - musis neco zahodit";
         }
-
+        hPlan.setAktualniLokace(aktLokace);
         return "Sebral(a) jsi predmet " + nazevPredmetu;
     }
     

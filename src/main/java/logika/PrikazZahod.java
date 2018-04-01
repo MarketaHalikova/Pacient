@@ -48,7 +48,7 @@ public class PrikazZahod implements IPrikaz
         
         Predmet vyndanyPredmet = lekarnicka.vyndejPredmet(nazevPredmetu);
         aktLokace.vlozPredmet(vyndanyPredmet);
-        
+        hPlan.setAktualniLokace(aktLokace);
         return "Zahodil(a) si předmět " + nazevPredmetu;
     }
     

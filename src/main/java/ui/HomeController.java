@@ -87,13 +87,23 @@ public class HomeController extends GridPane implements Observer{
 	                    setGraphic(null);
 	                } else {
 	                    if(predmet.getNazev().equals("jazyk"))
-	                        imageView.setImage(new Image("/jazyk.png", 20, 20, false, false));
+	                        imageView.setImage(new Image("/jazyk.png", 30, 30, false, false));
 	                    else if(predmet.getNazev().equals("penicilin"))
-	                        imageView.setImage(new Image("/penicilin.png", 20, 20, false, false));
+	                        imageView.setImage(new Image("/penicilin.png", 30, 30, false, false));
 	                    else if(predmet.getNazev().equals("prasek-zeleny"))
-	                        imageView.setImage(new Image("/prasekZeleny.png", 20, 20, false, false));
+	                        imageView.setImage(new Image("/prasekZeleny.png", 30, 30, false, false));
 	                    else if(predmet.getNazev().equals("prasek-modry"))
-	                        imageView.setImage(new Image("/prasekModry.png", 20, 20, false, false));
+	                        imageView.setImage(new Image("/prasekModry.png", 30, 30, false, false));
+	                    else if(predmet.getNazev().equals("srdce"))
+	                        imageView.setImage(new Image("/srdce.png", 30, 30, false, false));
+	                    else if(predmet.getNazev().equals("mozek"))
+	                        imageView.setImage(new Image("/mozek.png", 30, 30, false, false));
+	                    else if(predmet.getNazev().equals("oxacilin"))
+	                        imageView.setImage(new Image("/oxacilin.png", 30, 30, false, false));
+	                    else if(predmet.getNazev().equals("paralen1"))
+	                        imageView.setImage(new Image("/paralen1.png", 30, 30, false, false));
+	                    else if(predmet.getNazev().equals("paralen2"))
+	                        imageView.setImage(new Image("/paralen2.png", 30, 30, false, false));
 	                    //setText(predmet.getNazev());
 	                    setGraphic(imageView);
 	                }

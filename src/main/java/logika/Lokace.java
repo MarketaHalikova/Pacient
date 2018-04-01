@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Observable;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
@@ -241,6 +242,7 @@ public class Lokace {
     public void vlozPredmet(Predmet predmet)
     {
         predmety.put(predmet.getNazev(), predmet);
+
     }
 
     /**
@@ -252,7 +254,11 @@ public class Lokace {
      */
     public Predmet vezmiPredmet(String nazevPredmetu)
     {
-        return predmety.remove(nazevPredmetu);
+    	Predmet predmet = predmety.remove(nazevPredmetu);
+    	
+
+    	return predmet;
+        
     }
     
     /**
