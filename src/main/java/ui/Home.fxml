@@ -81,7 +81,7 @@
       <VBox GridPane.rowIndex="2">
          <children>
             <Label text="Obsah lékárničky" />
-            <ListView prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="lekarnicka" prefHeight="200.0" prefWidth="200.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
@@ -94,7 +94,7 @@
       <VBox GridPane.columnIndex="2" GridPane.rowIndex="2">
          <children>
             <Label text="Východy z prostoru" />
-            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="vychody" prefHeight="200.0" prefWidth="200.0" />
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

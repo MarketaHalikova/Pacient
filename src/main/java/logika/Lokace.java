@@ -2,6 +2,7 @@
  * Kontrola kĂłdovĂˇnĂ­: PĹ™Ă­liĹˇ ĹľluĹĄouÄŤkĂ˝ kĹŻĹ� ĂşpÄ›l ÄŹĂˇbelskĂ© Ăłdy. */
 package logika;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
@@ -215,6 +216,14 @@ public class Lokace {
      */
     public Collection<Lokace> getVychody() {
         return Collections.unmodifiableCollection(vychody);
+    }
+    
+    public Collection<String> getVychodyAsString() {
+    	List<String> list = new ArrayList<>();
+    	for(Lokace lokace:vychody){
+    		list.add(lokace.getNazev());
+    	}
+    	return list;
     }
     
     /**
