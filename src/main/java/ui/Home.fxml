@@ -35,7 +35,7 @@
           <Menu mnemonicParsing="false" text="Hra">
             <items>
               <MenuItem mnemonicParsing="false" text="Nová hra" />
-              <MenuItem mnemonicParsing="false" text="Konec Hry" />
+              <MenuItem mnemonicParsing="false" onAction="#ukoncitHru" text="Konec Hry" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Nápověda">

@@ -49,5 +49,13 @@ public interface IHra
      * @return    odkaz na herní plán
      */
      public HerniPlan getHerniPlan();
+     
+     /**
+      * Nastaví, že je konec hry, metodu využívá třída PrikazKonec,
+      * mohou ji použít i další implementace rozhraní Prikaz.
+      *  
+      * @param    konecHry hodnota false = konec hry, true = hra pokračuje
+      */
+     public void setKonecHry(boolean konecHry);
 
 }

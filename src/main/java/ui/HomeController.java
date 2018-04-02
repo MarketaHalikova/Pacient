@@ -35,6 +35,7 @@ public class HomeController extends GridPane implements Observer{
 
 	private IHra hra;
 	
+	
 	/**
 	 * metoda čte příkaz ze vstupního textového pole
 	 * a zpracuje ho
@@ -111,8 +112,7 @@ public class HomeController extends GridPane implements Observer{
 	                }
 	            }	
 	    });
-		
-		
+			
 
 	}
 	
@@ -138,6 +138,14 @@ public class HomeController extends GridPane implements Observer{
         	image = new Image("/paralen2.png", 40, 40, false, false);
 		return image;
 	}
+	
+	@FXML public void ukoncitHru() {
+		hra.setKonecHry(true);
+		vstupniText.setDisable(true);
+		vystup.appendText("\n\n Ukončil jsi hru. Můžeš začít novou, nebo zavřít okno. \n");
+        
+	}
+	
 
 }
 
