@@ -98,7 +98,7 @@ public class Predmet extends Observable {
     @Override
     public String toString()
     {
-        return "Predmet: " + nazev;
+        return "Předmět: " + nazev;
     }
 
 }

@@ -29,12 +29,12 @@ public class PrikazVezmi implements IPrikaz{
     public String proved(String... parametry){        
         if (parametry.length < 1)
         {
-            return "Nevim, co mam sebrat";
+            return "Nevím, co mám sebrat";
         }
         
         if (parametry.length > 1)
         {
-            return "Tomu nerozumim, nedokazu sebrat vice veci najednou";
+            return "Tomu nerozumím, nedokážu sebrat více věcí najednou";
         }
         
         String nazevPredmetu = parametry[0];
@@ -42,7 +42,7 @@ public class PrikazVezmi implements IPrikaz{
         
         if (!aktLokace.obsahujePredmet(nazevPredmetu))
         {
-            return "Predmet " + nazevPredmetu + " tady neni";
+            return "Předmět " + nazevPredmetu + " tady není";
         }
   
         Predmet predmet = aktLokace.vezmiPredmet(nazevPredmetu);
@@ -50,22 +50,22 @@ public class PrikazVezmi implements IPrikaz{
         if ((!predmet.isPrenositelny()) && (aktLokace.getNepritele() != null))
         {
             aktLokace.vlozPredmet(predmet);
-            return  nazevPredmetu + " si vzit nemuzes, nejdřív musíš zneškodnit nepřítele!";
+            return  nazevPredmetu + " si vzít nemůžeš, nejdřív musíš zneškodnit nepřítele!";
         }
         if (!predmet.isPrenositelny())
         {
             aktLokace.vlozPredmet(predmet);
-            return  nazevPredmetu + " si vzit nemuzes, bez toho pacient neprezije!";
+            return  nazevPredmetu + " si vzít nemůžeš, bez toho pacient nepřežije!";
         }
         
 
         Lekarnicka lekarnicka = hPlan.getLekarnicka();
         if (!lekarnicka.vlozPredmet(predmet)){
             aktLokace.vlozPredmet(predmet);
-            return "V lekarnicce uz nemas volne misto, muzes nest jen dve veci - musis neco zahodit";
+            return "V lékárniččce už nemáš volné místo, můžeš nést jen dvě věci - musíš něco zahodit";
         }
         hPlan.setAktualniLokace(aktLokace);
-        return "Sebral(a) jsi predmet " + nazevPredmetu;
+        return "Sebral(a) jsi předmět " + nazevPredmetu;
     }
     
     /**

@@ -100,6 +100,6 @@ public class Nepritel{
     
     @Override
     public String toString(){
-        return "Nepritel: " + nazev;
+        return "Nepřítel: " + nazev;
     }
 }

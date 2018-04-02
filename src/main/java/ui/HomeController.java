@@ -4,31 +4,16 @@ import logika.Hra;
 import logika.IHra;
 import logika.Predmet;
 
-import java.awt.Label;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
-
 import javafx.fxml.FXML;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-
-
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.web.PopupFeatures;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.util.Callback;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -70,7 +55,8 @@ public class HomeController extends GridPane implements Observer{
 		if(hra.konecHry()) {
 			if (hra.getHerniPlan().hracVyhral())
             {
-				vystup.appendText("\n \n Vyhrál jsi!!! Pacient je zdravý");;
+				vystup.appendText("\n \n Vyhrál jsi!!! Pacient je zdravý");
+				combo.setDisable(true);
             }
 			vstupniText.setDisable(true);
 			}
@@ -220,24 +206,23 @@ public class HomeController extends GridPane implements Observer{
         }
         catch (IOException e) {
             e.printStackTrace();
-        }
-
-	 
+        } 
 	}
 
-	@FXML public void combo() {
-		
+	/**
+	 *  Metoda reaguje na akci v comboboxu
+	 *  spustí vybraný pžíkaz a vypíše ho jako vstupní text
+	 * 
+	 */
+	@FXML public void combo() {		
 		vstupniText.clear();
 		String prikaz = combo.getSelectionModel().getSelectedItem().toString().toLowerCase();
-		System.out.println(prikaz);
 		vystup.appendText("\n\n");
 		vystup.appendText(hra.zpracujPrikaz(prikaz));
 		vstupniText.appendText(prikaz + " ");
 		
 	}
 
-	
-	
 
 }
 

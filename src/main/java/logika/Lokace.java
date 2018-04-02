@@ -145,7 +145,7 @@ public class Lokace {
      * @return    dlouhĂ˝ popis lokace
      */
     public String dlouhyPopis() {
-        return "Jsi v mistnosti/lokaci " + popis + ".\n"
+        return "Jsi v místnosti/lokaci " + popis + ".\n"
                 + popisVychodu() + "\n"
                 + seznamPredmetu();
     }
@@ -158,7 +158,7 @@ public class Lokace {
      */
     private String seznamPredmetu()
     {
-        String seznam = "predmety:";
+        String seznam = "předměty:";
         
         for (String nazevPredmetu : predmety.keySet())
         {
@@ -182,7 +182,7 @@ public class Lokace {
      * @return    popis vĂ˝chodĹŻ - nĂˇzvĹŻ sousednĂ­ch lokacĂ­
      */
     private String popisVychodu() {
-        String vracenyText = "vychody:";
+        String vracenyText = "východy:";
         for (Lokace sousedni : vychody) {
             vracenyText += " " + sousedni.getNazev();
             if (sousedni.jeZamceno()) {

@@ -59,8 +59,8 @@ class PrikazJdi implements IPrikaz {
                 }
                 plan.setAktualniLokace(sousedniLokace);
                 return sousedniLokace.dlouhyPopis()+ "\n"+ "\n"
-                    +" POZOR!!!POZOR!!! narazil/a jsi na nepritele " + sousedniLokace.getNepritele().getNazev()+ ".\n"
-                    +" Aby si mohl sebrat predmety, ktere chces, musis nejdrive nepritele zneškodnit" + ".\n"
+                    +" POZOR!!!POZOR!!! narazil/a jsi na nepřítele " + sousedniLokace.getNepritele().getNazev()+ ".\n"
+                    +" Aby si mohl sebrat předměty, které chceš, musíš nejdříve nepřítele zneškodnit" + ".\n"
                     +" Parazita můžeš prozkoumat, aby si zjistil/a, jak na něj.";
             
             }

@@ -35,7 +35,7 @@ class PrikazKonec implements IPrikaz {
     @Override
     public String proved(String... parametry) {
         if (parametry.length > 0) {
-            return "Ukončit co? Nechápu, proč jste zadal druhé slovo.";
+            return "Ukončit co? Nechápu, proč jsi zadal druhé slovo.";
         }
         else {
             hra.setKonecHry(true);

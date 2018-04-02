@@ -41,7 +41,7 @@ public class Hra implements IHra {
      */
     public String vratUvitani() {
         return "Vítejte!\n" +
-               "Lékař je jednoduchá textová hra v prostředí lidského těla.\n" +
+               "Pacient je jednoduchá textová hra v prostředí lidského těla.\n" +
                "Napište 'napoveda', pokud si nevíte rady, jak hrát dál.\n" +
                "\n" +
                herniPlan.getAktualniLokace().dlouhyPopis();
