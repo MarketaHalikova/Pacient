@@ -4,9 +4,15 @@ import logika.Hra;
 import logika.IHra;
 import logika.Predmet;
 
+import java.awt.Label;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
+
+import javafx.fxml.FXML;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 
 
@@ -206,7 +212,7 @@ public class HomeController extends GridPane implements Observer{
             root = FXMLLoader.load(getClass().getClassLoader().getResource("index.fxml"));
             Stage stage = new Stage();
             stage.setTitle("My New Stage Title");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root, 800, 800));
             stage.show();
         }
         catch (IOException e) {
@@ -215,6 +221,11 @@ public class HomeController extends GridPane implements Observer{
 
 	 
 	}
+
+	
+	
+	
+	
 
 }
 

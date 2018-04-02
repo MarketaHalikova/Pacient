@@ -55,12 +55,12 @@
          <children>
             <ImageView fitHeight="290.0" fitWidth="350.0" layoutX="30.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/herniPlan.png" />
+                  <Image url="herniPlan.png" />
                </image>
             </ImageView>
                   <ImageView fx:id="uzivatel" fitHeight="20.0" fitWidth="20.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" x="140.0" y="70.0">
                <image>
-                  <Image url="@img/doktor.png" />
+                  <Image url="doktor.png" />
                </image>
             </ImageView>
          </children>

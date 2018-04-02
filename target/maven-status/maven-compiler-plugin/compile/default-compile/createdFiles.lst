@@ -1,5 +1,6 @@
 logika\HerniPlan.class
 ui\HomeController$1.class
+ui\WebViewController.class
 logika\PrikazProzkoumej.class
 logika\PrikazNapoveda.class
 logika\PrikazVezmi.class
