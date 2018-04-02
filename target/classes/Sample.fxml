@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adventuraFX.Controller">
+   <MenuBar prefHeight="25.0" prefWidth="544.0">
+     <menus>
+       <Menu mnemonicParsing="false" text="Nová hra">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Konec hry">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Delete" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Restart">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+
+      <Button fx:id="button" alignment="CENTER" layoutX="50.0" layoutY="50.0" onAction="#kliknuti" style="-fx-background-color: turquoise;" text="Boop" textAlignment="CENTER">
+      <padding>
+         <Insets bottom="30.0" left="70.0" right="70.0" top="30.0" />
+      </padding>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <font>
+         <Font size="15.0" />
+      </font>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <effect>
+         <Blend mode="COLOR_BURN" />
+      </effect></Button>
+   <Label text="Hra" />
+   <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         <ListView layoutY="47.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+      </children>
+   </AnchorPane>
+   
+    
+</VBox>

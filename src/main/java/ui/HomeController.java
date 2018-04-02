@@ -4,14 +4,27 @@ import logika.Hra;
 import logika.IHra;
 import logika.Predmet;
 
+import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
+
+
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.web.PopupFeatures;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Callback;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -47,12 +60,16 @@ public class HomeController extends GridPane implements Observer{
 		vystup.appendText(vystupPrikazu);
 		vstupniText.setText("");
 		if(hra.konecHry()) {
+			if (hra.getHerniPlan().hracVyhral())
+            {
+				vystup.appendText("\n \n Vyhrál jsi!!! Pacient je zdravý");;
+            }
 			vstupniText.setDisable(true);
 			}
 	}
 	
 	/**
-	 * Metoda bude soužit pro předání objektu se spuštěnou hrou
+	 * Metoda slouží pro předání objektu se spuštěnou hrou
 	 * kontroleru a zobrazí stav hry v grafice.
 	 * @param objekt spuštěné hry
 	 */
@@ -67,6 +84,13 @@ public class HomeController extends GridPane implements Observer{
 	}
 	
 
+	/**
+	 * Metoda generovaná obseverem
+	 * reaguje na změnu stavu v metodě, kde je změna nastavena
+	 * pote porvede svůj obsah
+	 * @param Observable
+	 * @param Object
+	 */
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		
@@ -116,7 +140,12 @@ public class HomeController extends GridPane implements Observer{
 			
 
 	}
-	
+	/**
+	 * Metoda hledá obrázek k předmětu
+	 * obdrží v parametru předmět, pro který má obrázek najít a ten následně vrací
+	 * @param Predmet pro který hledáme obrázek
+	 * @return Image nalezený obrázek
+	 */
 	private Image getImage(Predmet predmet) {
 		Image image = null;
 		if(predmet.getNazev().equals("jazyk"))
@@ -140,21 +169,52 @@ public class HomeController extends GridPane implements Observer{
 		return image;
 	}
 	
+	/**
+	 * Metoda ukončí hru 
+	 * a vypíše text do textového pole
+	 */
 	@FXML public void ukoncitHru() {
 		hra.setKonecHry(true);
 		vstupniText.setDisable(true);
 		vystup.appendText("\n\n Ukončil jsi hru. Můžeš začít novou, nebo zavřít okno. \n");
         
 	}
+	/**
+	 * Metoda spustí novou hru
+	 * 
+	 */
 	@FXML public void novaHra() {
 		vstupniText.setDisable(false);
 		inicializuj(new  Hra());
 	}
 	
+	/**
+	 * Metoda zavolá příkaz nápověda 
+	 * 
+	 */
 	@FXML public void napoveda() {
 		vystup.appendText(hra.zpracujPrikaz("napoveda"));
 	}
 	
+	/**
+	 *  
+	 * 
+	 */
+	@FXML public void prirucka() {
+		Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("index.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("My New Stage Title");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+	 
+	}
 
 }
 

@@ -1,12 +1,12 @@
 package ui;
 
-import logika.Hra;
-import logika.IHra;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import logika.Hra;
+import logika.IHra;
 
 /**
  * Třída slouží ke spuštění adventury.

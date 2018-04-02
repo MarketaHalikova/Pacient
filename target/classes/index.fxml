@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -16,6 +17,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.collections.*?>
+<?import java.util.*?>
+<?import java.lang.*?>
+
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.HomeController">
   <columnConstraints>
@@ -41,7 +46,7 @@
           <Menu mnemonicParsing="false" text="Nápověda">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#napoveda" text="Zobrazit v textové oblasti" />
-                  <MenuItem mnemonicParsing="false" text="Zobrazit uživatelskou příručku" />
+                  <MenuItem mnemonicParsing="false" onAction="#prirucka" text="Zobrazit uživatelskou příručku" />
                </items>
           </Menu>
         </menus>
@@ -105,6 +110,21 @@
          <children>
             <Label text="Zadej příkaz" />
             <TextField fx:id="vstupniText" onAction="#odesliPrikaz" />
+            <ComboBox prefWidth="150.0" promptText="Příkazy">
+            	<items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Jdi" />
+                    <String fx:value="Vezmi" />
+                    <String fx:value="Zahod" />
+                    <String fx:value="Odemkni" />
+                    <String fx:value="Zautoc" />
+                    <String fx:value="Prozkoumej" />
+                    <String fx:value="Lekarnicka" />
+                    <String fx:value="Napoveda" />
+                    <String fx:value="Konec" />
+                </FXCollections>
+            </items>
+            </ComboBox>
          </children>
          <GridPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
