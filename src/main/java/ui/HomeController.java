@@ -1,5 +1,6 @@
 package ui;
 
+import logika.Hra;
 import logika.IHra;
 import logika.Predmet;
 
@@ -11,8 +12,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,6 +35,7 @@ public class HomeController extends GridPane implements Observer{
 	@FXML private ListView<String> vychody;
 	@FXML private ListView<Predmet> veci;
 	@FXML private ListView<Predmet> lekarnicka;
+	@FXML private MenuItem novaHra;
 
 	private IHra hra;
 	
@@ -144,6 +148,10 @@ public class HomeController extends GridPane implements Observer{
 		vstupniText.setDisable(true);
 		vystup.appendText("\n\n Ukončil jsi hru. Můžeš začít novou, nebo zavřít okno. \n");
         
+	}
+	@FXML public void novaHra() {
+		vstupniText.setDisable(false);
+		inicializuj(new  Hra());
 	}
 	
 
