@@ -31,6 +31,7 @@ import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
@@ -52,6 +53,7 @@ public class HomeController extends GridPane implements Observer{
 	@FXML private ListView<String> vychody;
 	@FXML private ListView<Predmet> veci;
 	@FXML private ListView<Predmet> lekarnicka;
+	@FXML private ComboBox<String> combo;
 
 	private IHra hra;
 	
@@ -199,11 +201,12 @@ public class HomeController extends GridPane implements Observer{
 	 * 
 	 */
 	@FXML public void napoveda() {
+		vystup.appendText("\n\n");
 		vystup.appendText(hra.zpracujPrikaz("napoveda"));
 	}
 	
 	/**
-	 *  
+	 *  Metoda otevře nové okno se souborem index.fxml
 	 * 
 	 */
 	@FXML public void prirucka() {
@@ -222,8 +225,17 @@ public class HomeController extends GridPane implements Observer{
 	 
 	}
 
-	
-	
+	@FXML public void combo() {
+		
+		vstupniText.clear();
+		String prikaz = combo.getSelectionModel().getSelectedItem().toString().toLowerCase();
+		System.out.println(prikaz);
+		vystup.appendText("\n\n");
+		vystup.appendText(hra.zpracujPrikaz(prikaz));
+		vstupniText.appendText(prikaz + " ");
+		
+	}
+
 	
 	
 

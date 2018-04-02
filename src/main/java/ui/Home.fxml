@@ -110,7 +110,7 @@
          <children>
             <Label text="Zadej příkaz" />
             <TextField fx:id="vstupniText" onAction="#odesliPrikaz" />
-            <ComboBox prefWidth="150.0" promptText="Příkazy">
+            <ComboBox prefWidth="150.0" promptText="Příkazy" onAction="#combo" fx:id="combo">
             	<items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Jdi" />
@@ -119,7 +119,6 @@
                     <String fx:value="Odemkni" />
                     <String fx:value="Zautoc" />
                     <String fx:value="Prozkoumej" />
-                    <String fx:value="Lekarnicka" />
                     <String fx:value="Napoveda" />
                     <String fx:value="Konec" />
                 </FXCollections>
