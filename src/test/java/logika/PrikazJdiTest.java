@@ -16,7 +16,7 @@ public class PrikazJdiTest {
     private static final String NAZEV_PRIKAZU = "jdi";
     private static final String ODP_NA_CHYBNE_ZADANI = "Kam mám jít? Musíš zadat jméno východu";
     private static final String ODP_NA_CHYBNY_CIL = "Tam se odsud jít nedá!";
-    private static final String ODP_PRECHOD_DO_KRKU = "Jsi v mistnosti/lokaci krk pacienta.\nvychody: telo pusa hlava(zamknuto)\npredmety:";
+    private static final String ODP_PRECHOD_DO_KRKU = "Jsi v místnosti/lokaci krk pacienta.\nvýchody: telo pusa hlava(zamknuto)\npředměty:";
     private static final String KRK_NAZEV = "krk";
     private static final String PUSA_NAZEV = "pusa";
 

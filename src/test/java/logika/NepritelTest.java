@@ -92,7 +92,7 @@ public class NepritelTest{
      */
     @Test
     public void testToString() {
-        assertEquals("Nepritel: " + NAZEV, nepritel.toString());
+        assertEquals("Nepřítel: " + NAZEV, nepritel.toString());
 
     }
 

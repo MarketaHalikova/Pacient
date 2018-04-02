@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 public class PrikazProzkoumejTest
 {
     private static final String NAZEV_PRIKAZU = "prozkoumej";
-    private static final String ODPOVED_NA_BEZ_PARAM = "Jsi v mistnosti/lokaci pusa pacienta." + "\n" + "vychody: krk" + "\n" + "predmety: jazyk";
+    private static final String ODPOVED_NA_BEZ_PARAM = "Jsi v místnosti/lokaci pusa pacienta." + "\n" + "východy: krk" + "\n" + "předměty: jazyk";
     private static final String ODP_NA_VIC_PARAM = "Tomu nerozumím, nemůžeš prozkoumat více předmětů najednou";
     private static final String ODP_NA_NENI_NIKDE = "Předmět predmet1 není v lékárničce ani v aktuální lokaci, ani se nejedná o nepřítele";
     private static final String ODP_NA_JE = "nepodstatne";

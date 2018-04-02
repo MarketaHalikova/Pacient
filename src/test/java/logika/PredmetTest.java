@@ -78,7 +78,7 @@ public class PredmetTest {
      */
     @Test
     public void testToString() {
-        assertEquals("Predmet: " + NAZEV, predmetDvaParametry.toString());
+        assertEquals("Předmět: " + NAZEV, predmetDvaParametry.toString());
 
     }
 }

@@ -15,13 +15,13 @@ import static org.junit.Assert.*;
  */
 public class PrikazVezmiTest {
     private static final String NAZEV_PRIKAZU = "vezmi";
-    private static final String ODPOVED_NA_BEZ_PARAM = "Nevim, co mam sebrat";
-    private static final String ODP_NA_VIC_PARAM = "Tomu nerozumim, nedokazu sebrat vice veci najednou";
-    private static final String ODP_NA_NENI_V_LOKACI = "Predmet predmet1 tady neni";
-    private static final String ODP_NA_NEPRENOS = "predmet4 si vzit nemuzes, bez toho pacient neprezije!";
-    private static final String ODP_NA_NENI_MISTO = "V lekarnicce uz nemas volne misto, muzes nest jen dve veci - musis neco zahodit";
-    private static final String ODP_NA_SEBRANI = "Sebral(a) jsi predmet predmet1";
-    private static final String ODP_NA_NEPRITEL = "predmet4 si vzit nemuzes, nejdřív musíš zneškodnit nepřítele!";
+    private static final String ODPOVED_NA_BEZ_PARAM = "Nevím, co mám sebrat";
+    private static final String ODP_NA_VIC_PARAM = "Tomu nerozumím, nedokážu sebrat více věcí najednou";
+    private static final String ODP_NA_NENI_V_LOKACI = "Předmět predmet1 tady není";
+    private static final String ODP_NA_NEPRENOS = "predmet4 si vzít nemůžeš, bez toho pacient nepřežije!";
+    private static final String ODP_NA_NENI_MISTO = "V lékárniččce už nemáš volné místo, můžeš nést jen dvě věci - musíš něco zahodit";
+    private static final String ODP_NA_SEBRANI = "Sebral(a) jsi předmět predmet1";
+    private static final String ODP_NA_NEPRITEL = "predmet4 si vzít nemůžeš, nejdřív musíš zneškodnit nepřítele!";
     
     private static final String NAZEV_1 = "predmet1";
     private static final String NAZEV_2 = "predmet2";

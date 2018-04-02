@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class PrikazKonecTest {
 
     private static final String NAZEV_PRIKAZU = "konec";
-    private static final String ODPOVED_CHYB_ZADANI = "Ukončit co? Nechápu, proč jste zadal druhé slovo.";
+    private static final String ODPOVED_CHYB_ZADANI = "Ukončit co? Nechápu, proč jsi zadal druhé slovo.";
     private static final String ODPOVED_KONEC_HRY = "hra ukončena příkazem konec";
 
     PrikazKonec prikazKonec;
